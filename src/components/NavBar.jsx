@@ -55,8 +55,8 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      {/* <CssBaseline /> */}
-      <AppBar component="nav">
+      <CssBaseline />
+      <AppBar component="nav" sx={{ backgroundColor: "#FFCB05" }}>
         <Toolbar>
           <IconButton
             color="inherit"
