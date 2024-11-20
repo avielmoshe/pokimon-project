@@ -1,11 +1,12 @@
 .homepage {
+  background-color: #F6F7C4;
 
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(to bottom, #f8fafc, #d4e7f5); 
+    background-color: #FCF596;
     padding: 5px;
     font-family: 'Arial', sans-serif;
     color: #333;
