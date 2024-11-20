@@ -1,6 +1,6 @@
 import "./App.css";
 import MainConteiner from "./components/mainConteiner/MainConteiner.jsx";
-import DrawerAppBar from "./components/NavBar.jsx";
+import DrawerAppBar from "./components/navBar/NavBar.jsx";
 import { useState } from "react";
 
 // import NavBar from "./components/mainConteiner/MainConteiner.jsx";
