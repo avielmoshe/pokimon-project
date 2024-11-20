@@ -14,6 +14,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import ImgPokemon from "../imgs/עיצוב ללא שם.png";
+import "./NavBar.css";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Favorites", "Logout"];
@@ -24,6 +26,10 @@ function DrawerAppBar(props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const userChoiceAndClick = () => {
+    props.setDidUserClick(false);
   };
 
   const drawer = (
@@ -38,7 +44,11 @@ function DrawerAppBar(props) {
             key={item}
             disablePadding
             onClick={() => {
-              alert(`you click on ${item}`);
+              if (item === "Home") {
+                userChoiceAndClick();
+              } else {
+                alert(`you clicked on ${item}`);
+              }
             }}
           >
             <ListItemButton sx={{ textAlign: "center" }}>
@@ -67,20 +77,23 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <img className="ImgPokemon" src={ImgPokemon} alt="" />
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Pokemon
-          </Typography>
+          ></Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
                 key={item}
                 sx={{ color: "#fff" }}
                 onClick={() => {
-                  alert(`you click on ${item}`);
+                  if (item === "Home") {
+                    userChoiceAndClick();
+                  } else {
+                    alert(`you clicked on ${item}`);
+                  }
                 }}
               >
                 {item}
@@ -114,10 +127,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

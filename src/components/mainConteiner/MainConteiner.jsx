@@ -4,9 +4,8 @@ import CardPage from "../cardPage/CardPage.jsx";
 import HomePage from "../homePage/HomePage.jsx";
 import { useState } from "react";
 
-const MainConteiner = () => {
+const MainConteiner = ({ setDidUserClick, didUserClick }) => {
   const [userChoice, setUserChoice] = useState(0);
-  const [didUserClick, setDidUserClick] = useState(false);
   return (
     <div className="mainConteiner">
       {didUserClick ? (
