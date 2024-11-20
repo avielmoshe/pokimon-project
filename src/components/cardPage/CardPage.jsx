@@ -1,6 +1,5 @@
 import { getOne } from "../../utils/getApi.js";
 import { useState, useEffect } from "react";
-import styles from "./HomePage.module.css";
 
 const CardPage = ({ userChoice }) => {
   const [Data, setData] = useState(null);
