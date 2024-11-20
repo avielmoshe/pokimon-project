@@ -1,0 +1,86 @@
+
+.pokemonCard {
+ background: linear-gradient(
+    145deg,
+    rgb(170, 255, 189),
+    rgb(23, 179, 34)
+  );
+  margin-top: 4.6rem;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 720px;
+  height: 100%;
+}
+
+
+
+.pokemonCard h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pokemonCard img {
+  border: 2px solid black;
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokemonCard h2 {
+
+  color: #FF6347;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.pokemonCard p {
+  font-size: 1rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+.pokemonCard .base_experience {
+  font-weight: bold;
+  color: #FF6347;
+}
+
+.pokemonCard audio {
+  
+  height: 40px;
+  width: 150px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.pokemonCard .gif {
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .pokemonCard {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .pokemonCard h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemonCard h1 {
+    font-size: 1.5rem;
+  }
+
+  .pokemonCard img {
+    width: 120px;
+  }
+}
