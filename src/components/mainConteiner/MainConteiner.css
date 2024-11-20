@@ -1,6 +1,13 @@
 .mainConteiner{
-background-color: #F6F7C4;
+    background-color: #F6F7C4;
 display: flex;
 justify-content: center;
 height: 100%;
+}
+body,html{
+    height: 100%
+}
+body{
+    background-color: #F6F7C4;
+
 }
