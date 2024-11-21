@@ -14,7 +14,7 @@ function App() {
         <DrawerAppBar />
         <Routes>
           <Route path="/pokemon/:id" element={<CardPage />} />
-          <Route path="/home" element={<MainConteiner />} />
+          <Route path="/" element={<MainConteiner />} />
           <Route path="/about" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />
         </Routes>
