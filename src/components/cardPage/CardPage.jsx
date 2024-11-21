@@ -1,19 +1,22 @@
 import { getOne } from "../../utils/getApi.js";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import "./CardPage.css";
 
-const CardPage = ({ userChoice }) => {
-  const [Data, setData] = useState(null);
+const CardPage = () => {
+  const { id } = useParams();
 
+  const [Data, setData] = useState(null);
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const getPok = async () => {
-    const data = await getOne(userChoice);
+    const data = await getOne(url);
     setData(data);
   };
 
   useEffect(() => {
     getPok();
   }, []);
-  console.log(Data);
 
   return (
     Data && (

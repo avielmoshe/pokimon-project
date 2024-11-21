@@ -17,8 +17,10 @@ import Button from "@mui/material/Button";
 import ImgPokemon from "../../imgs/עיצוב ללא שם.png";
 import "./NavBar.css";
 
+import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Favorites", "Logout"];
+const navItems = ["Home", "About", "Favorites"];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -26,10 +28,6 @@ function DrawerAppBar(props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
-  };
-
-  const userChoiceAndClick = () => {
-    props.setDidUserClick(false);
   };
 
   const drawer = (
@@ -40,21 +38,13 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem
-            key={item}
-            disablePadding
-            onClick={() => {
-              if (item === "Home") {
-                userChoiceAndClick();
-              } else {
-                alert(`you clicked on ${item}`);
-              }
-            }}
-          >
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <Link to={item} key={item}>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -85,19 +75,9 @@ function DrawerAppBar(props) {
           ></Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{ color: "#fff" }}
-                onClick={() => {
-                  if (item === "Home") {
-                    userChoiceAndClick();
-                  } else {
-                    alert(`you clicked on ${item}`);
-                  }
-                }}
-              >
-                {item}
-              </Button>
+              <Link to={item} key={item}>
+                <Button sx={{ color: "#fff" }}>{item}</Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

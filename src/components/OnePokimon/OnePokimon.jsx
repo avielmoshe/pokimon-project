@@ -13,7 +13,6 @@ const OnePokimon = ({ pokimonUrl }) => {
   useEffect(() => {
     getPok();
   }, []);
-  console.log();
 
   return (
     Data && (

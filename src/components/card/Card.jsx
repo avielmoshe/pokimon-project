@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import OnePokimon from "../OnePokimon/OnePokimon.jsx";
 import "./Card.css";
 
-const Card = ({ setDidUserClick, setUserChoice }) => {
+import { Link } from "react-router-dom";
+
+const Card = () => {
   const [pokeballData, setPokeballData] = useState(null);
 
   const getAllPokes = async () => {
@@ -15,24 +17,15 @@ const Card = ({ setDidUserClick, setUserChoice }) => {
     getAllPokes();
   }, []);
 
-  const userChoiceAndClick = () => {
-    setDidUserClick(true);
-  };
-
   return (
     pokeballData && (
       <div className="grid-container">
-        {pokeballData.map((pokimon) => (
-          <div
-            onClick={() => {
-              userChoiceAndClick();
-              setUserChoice(pokimon.url);
-            }}
-            className="card"
-            key={`idIs${pokimon.name}`}
-          >
-            <OnePokimon pokimonUrl={pokimon.url} />
-          </div>
+        {pokeballData.map((pokimon, i) => (
+          <Link to={`/pokemon/${i + 1}/`} key={`idIs${pokimon.name}`}>
+            <div className="card">
+              <OnePokimon pokimonUrl={pokimon.url} />
+            </div>
+          </Link>
         ))}
       </div>
     )

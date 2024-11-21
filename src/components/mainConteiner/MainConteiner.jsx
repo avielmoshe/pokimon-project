@@ -1,21 +1,11 @@
 import "./MainConteiner.css";
 
-import CardPage from "../cardPage/CardPage.jsx";
 import HomePage from "../homePage/HomePage.jsx";
-import { useState } from "react";
 
-const MainConteiner = ({ setDidUserClick, didUserClick }) => {
-  const [userChoice, setUserChoice] = useState(0);
+const MainConteiner = ({ setUserChoice }) => {
   return (
     <div className="mainConteiner">
-      {didUserClick ? (
-        <CardPage userChoice={userChoice} />
-      ) : (
-        <HomePage
-          setDidUserClick={setDidUserClick}
-          setUserChoice={setUserChoice}
-        />
-      )}
+      <HomePage />
     </div>
   );
 };
