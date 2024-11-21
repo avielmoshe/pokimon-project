@@ -10,3 +10,9 @@ html,body{
 body{
     background-color: #F6F7C4;
 }
+
+#root{
+    background-color: #F6F7C4;
+display: flex;
+justify-content: center;
+}
