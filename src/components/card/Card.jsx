@@ -21,7 +21,11 @@ const Card = () => {
     pokeballData && (
       <div className="grid-container">
         {pokeballData.map((pokimon, i) => (
-          <Link to={`/pokemon/${pokimon.name}/`} key={`idIs${pokimon.name}`}>
+          <Link
+            to={`/pokemon/${pokimon.name}/`}
+            key={`idIs${pokimon.name}`}
+            style={{ textDecoration: "none" }}
+          >
             <div className="card">
               <OnePokimon pokimonUrl={pokimon.url} />
             </div>
