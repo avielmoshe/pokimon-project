@@ -7,13 +7,12 @@ import Favorites from "./components/favorite/Favorite.jsx";
 import About from "./components/abuot/About.jsx";
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
         <DrawerAppBar />
         <Routes>
-          <Route path="/pokemon/:id" element={<CardPage />} />
+          <Route path="/pokemon/:pokemonName" element={<CardPage />} />
           <Route path="/" element={<MainConteiner />} />
           <Route path="/about" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />

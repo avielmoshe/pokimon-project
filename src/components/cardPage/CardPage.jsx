@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 import "./CardPage.css";
 
 const CardPage = () => {
-  const { id } = useParams();
+  const { pokemonName } = useParams();
 
   const [Data, setData] = useState(null);
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
   const getPok = async () => {
     const data = await getOne(url);
     setData(data);
