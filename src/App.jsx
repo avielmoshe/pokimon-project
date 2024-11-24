@@ -13,14 +13,11 @@ function App() {
       <BrowserRouter>
         <DrawerAppBar />
         <Routes>
-          <Route path="/pokemon/:pokemonName" element={<CardPage />} />
           <Route path="/" element={<MainConteiner />} />
+          <Route path="/pokemon/:pokemonName" element={<CardPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />
-          <Route
-            path="/pokemonByName"
-            element={<OnePokimon pokemonUrl={pokemonUrl} />}
-          />
+          <Route path="/pokemonByName/:pokemonName" element={<OnePokimon />} />
         </Routes>
       </BrowserRouter>
     </>

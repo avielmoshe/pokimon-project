@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import "./Input.css";
+import { Link } from "react-router-dom";
 
 function Input() {
   const [text, setText] = useState("");
@@ -8,12 +9,9 @@ function Input() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setText(inputRef.current.value);
-    const url = `https://pokeapi.co/api/v2/pokemon/${text}`;
-    console.log(url);
-    
+
     inputRef.current.value = "";
   };
-
 
   return (
     <>
@@ -29,8 +27,8 @@ function Input() {
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        <Link to = {`/pokemonByName`}>
-        <button type="submit">Search</button>
+        <Link to={`/pokemonByName/${text}`}>
+          <button type="submit">Search</button>
         </Link>
       </form>
     </>
