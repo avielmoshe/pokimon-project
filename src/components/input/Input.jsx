@@ -9,9 +9,11 @@ function Input() {
     e.preventDefault();
     setText(inputRef.current.value);
     const url = `https://pokeapi.co/api/v2/pokemon/${text}`;
-
+    console.log(url);
+    
     inputRef.current.value = "";
   };
+
 
   return (
     <>
@@ -27,7 +29,9 @@ function Input() {
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        <button type="submit">Search</button>{" "}
+        <Link to = {`/pokemonByName`}>
+        <button type="submit">Search</button>
+        </Link>
       </form>
     </>
   );
