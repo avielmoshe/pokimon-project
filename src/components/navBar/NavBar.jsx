@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ImgPokemon from "../../imgs/עיצוב ללא שם.png";
 import "./NavBar.css";
+import Input from "../input/Input";
 
 import { Link } from "react-router-dom";
 
@@ -73,12 +74,20 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           ></Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            {" "}
             {navItems.map((item) => (
               <Link to={item === "Home" ? `/` : item} key={item}>
                 <Button sx={{ color: "#fff" }}>{item}</Button>
               </Link>
             ))}
+            <Input />
           </Box>
         </Toolbar>
       </AppBar>

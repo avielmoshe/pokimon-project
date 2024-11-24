@@ -1,0 +1,42 @@
+input{
+    width: 120px;
+}
+
+label{
+    font-size: 0.7rem;
+
+}
+
+.form-div{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap:4px
+}
+button{
+    padding: 0.3rem;
+    font-size: 0.6rem;
+    height: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: aliceblue;
+  cursor: pointer;
+}
+button:hover{
+    background-color: yellowgreen;
+
+}
+
+form{
+    display: flex;
+    gap: 4px;
+align-items: center;
+}
+
+@media (max-width:650px){
+    form{
+        display: flex;
+       flex-direction: column;
+    }
+}
