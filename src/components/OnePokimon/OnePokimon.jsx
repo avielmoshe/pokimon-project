@@ -2,11 +2,11 @@ import { getOne } from "../../utils/getApi.js";
 import { useState, useEffect } from "react";
 import styles from "./OnePokimon.module.css";
 
-const OnePokimon = ({ pokimonUrl }) => {
+const OnePokimon = ({ pokemonUrl }) => {
   const [Data, setData] = useState(null);
 
   const getPok = async () => {
-    const data = await getOne(pokimonUrl);
+    const data = await getOne(pokemonUrl);
     setData(data);
   };
 

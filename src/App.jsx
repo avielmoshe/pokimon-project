@@ -5,6 +5,7 @@ import DrawerAppBar from "./components/navBar/NavBar.jsx";
 import CardPage from "./components/cardPage/CardPage.jsx";
 import Favorites from "./components/favorite/Favorite.jsx";
 import About from "./components/abuot/About.jsx";
+import OnePokimon from "./components/OnePokimon/OnePokimon.jsx";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
           <Route path="/" element={<MainConteiner />} />
           <Route path="/about" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />
+          <Route
+            path="/pokemonByName"
+            element={<OnePokimon pokemonUrl={pokemonUrl} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
